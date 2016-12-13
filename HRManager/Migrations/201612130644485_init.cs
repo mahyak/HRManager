@@ -3,7 +3,7 @@ namespace HRManager.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Init : DbMigration
+    public partial class init : DbMigration
     {
         public override void Up()
         {
@@ -13,6 +13,7 @@ namespace HRManager.Migrations
                     {
                         ID = c.Int(nullable: false, identity: true),
                         Name = c.String(),
+                        postalCode = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.ID);
             

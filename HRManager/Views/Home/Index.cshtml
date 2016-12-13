@@ -1,0 +1,37 @@
+﻿@using HRManager.ViewModels
+@model List<ShowCityViewModel>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th><span class="text-left">Row </span></th>
+                <th><span class="text-left">City </span></th>
+                <th><span class="text-left">PostalCode </span></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>@item.ID</th>
+                    <th>@item.Name</th>
+                    <th>@item.PostalCode</th>
+                    <th>
+                        <a href="@Url.Action("Edit","ManageCity",new {id=item.ID})">
+                            <p class="text-muted">Edit</p>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="@Url.Action("Delete","ManageCity",new {id=item.ID})">
+                            <p class="text-muted">Delete</p>
+                        </a>
+                    </th>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

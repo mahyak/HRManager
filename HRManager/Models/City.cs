@@ -6,6 +6,7 @@ namespace HRManager.Models
     {
         public int ID { get; set; }
         public string Name { get; set; }
+        public int postalCode { get; set; }
         public virtual ICollection<Person> person { get; set; }
     }
 }
