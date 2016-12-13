@@ -1,0 +1,28 @@
+﻿@using HRManager.ViewModels
+@model EditCityViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Edit", "ManageCity", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(a => a.Name, new { style = "margin-top:10px;margin-botton:10px; margin-right:40px", @class = "text" })
+        @Html.TextBoxFor(a => a.Name, new { placeholder = "City Name" })
+        @Html.ValidationMessageFor(a => a.Name)
+    </div>
+    <div>
+        @Html.LabelFor(a => a.PostalCode, new { style = "margin-top:10px; margin-botton:10px", @class = "text" })
+        @Html.TextBoxFor(a => a.PostalCode, new { placeholder = "PostalCode" })
+    </div>
+    <button>
+        Submit
+    </button>
+}
+<div class="jumbotron">
+    <h4>Human Resource Add City Page.</h4>
+    <p>SomeThingHere SomeThingHere SomeThingHere</p>
+    <p><a class="btn btn-default btn-primary" href="@Url.Action("Index","Home")" role="button">Show City</a></p>
+</div>
+
