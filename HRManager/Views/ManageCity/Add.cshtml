@@ -5,22 +5,26 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@using (Html.BeginForm("Add", "ManageCity", FormMethod.Post))
-{
-    <div>
-        @Html.LabelFor(a => a.Name, new { style = "margin-top:10px;margin-botton:10px; margin-right:40px", @class = "text" })
-        @Html.TextBoxFor(a => a.Name, new { placeholder = "City Name" })
-        @Html.ValidationMessageFor(a => a.Name)
+<form class="form-horizontal">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-4">
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-tower"></span></span>
+                    <input type="text" class="form-control" placeholder="City Name" style="width:150px">
+                </div>
+            </div>
+            <hr />
+            <div class="col-xs-4">
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-send"></span></span>
+                    <input type="text" class="form-control" placeholder="Postal Code" style="width:150px">
+                </div>
+            </div>
+        </div>
     </div>
-    <div>
-        @Html.LabelFor(a => a.PostalCode, new { style = "margin-top:10px; margin-botton:10px", @class = "text" })
-        @Html.TextBoxFor(a => a.PostalCode, new { placeholder = "PostalCode" })
-        @Html.ValidationMessageFor(a=>a.PostalCode)
-    </div>
-    <button>
-        Submit
-    </button>
-}
+    <p><a class="btn btn-default" href="@Url.Action("Add","ManageCity")" role="button">Submit</a></p>
+</form>
 <div class="jumbotron">
     <h4>Human Resource Add City Page.</h4>
     <p>SomeThingHere SomeThingHere SomeThingHere</p>
